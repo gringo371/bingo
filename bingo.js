@@ -84,17 +84,7 @@ class Bingo {
                 "end",
                 this.onFinishAnimation
                 );
-    }
-
-    preload(numbers) {
-        for (let i = 0; i < numbers.length; i++) {
-            for (let j = 0; j < this.rows.length; j++) {
-                if (this.rows[j].belongsTo(numbers[i])) {
-                    this.rows[j].push(numbers[i]);
-                    break;
-                }
-            }
-        }
+        this.load();
     }
 
     reset() {
@@ -106,6 +96,7 @@ class Bingo {
             for (var i = 0; i < this.rows.length; i++) {
                 this.rows[i].reset();
             }
+            this.cookie.Destroy("bingo");
         }
     }
 
@@ -162,5 +153,27 @@ class Bingo {
 
         this.cookie.Create("bingo", numbersJson);
     }
+
+    load() {
+        let index;
+
+        const cookie = this.cookie.Get("bingo");
+        if (cookie != null) {
+            numbers = JSON.parse(cookie);
+            for (let i = 0; i < numbers.length; i++) {
+                for (let j = 0; j < this.rows.length; j++) {
+                    if (this.rows[j].belongsTo(numbers[i])) {
+                        this.rows[j].push(numbers[i]);
+                        
+                        index = this.numbers.indexOf(numbers[i])
+                        this.numbers.splice(index, 1);
+                        
+                        break;
+                    }
+                }
+            }
+        }
+    }
+
 }
 
