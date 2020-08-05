@@ -137,7 +137,7 @@ class RollAnimation {
         this.box3 = false;
 
         this.audio = new Audio('Redoble_1.mp3');
-        this.audio.volume = 0.02;
+        this.audio.volume = 0.2;
 
     }
 
