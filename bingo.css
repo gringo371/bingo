@@ -1,4 +1,13 @@
 
+:root {
+  --background-color: #00415F;
+}
+
+html, body {
+    background-color: var(--background-color);
+    overflow: hidden;
+}
+
 #inputRoll {
     position: absolute;
     width: 95%;
@@ -90,6 +99,19 @@
     left: 60%;
 }
 
+/*
+    top: -10%;
+    left: -4%;
+    */
+
+#brackground {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color:#00415F;
+    background-image: "./brackground.jpg";
+    transform: translate(-50%, -50%);
+}
 
 @keyframes start {
     from {
@@ -127,3 +149,4 @@
         transform: translate(0, 0);
     }
 }
+

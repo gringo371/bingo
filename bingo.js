@@ -156,10 +156,11 @@ class Bingo {
 
     load() {
         let index;
-
         const cookie = this.cookie.Get("bingo");
+        
         if (cookie != null) {
             const numbers = JSON.parse(cookie);
+            
             for (let i = 0; i < numbers.length; i++) {
                 for (let j = 0; j < this.rows.length; j++) {
                     if (this.rows[j].belongsTo(numbers[i])) {
@@ -173,6 +174,7 @@ class Bingo {
                 }
             }
         }
+        
     }
 
 }
