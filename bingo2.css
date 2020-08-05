@@ -123,6 +123,7 @@ html, body {
 
 .bingoTableLetters {
     background-color: var(--button-color) !important;
+    color: var(--button-text-color) !important;
 }
 
 .rollBoxAnimation {
